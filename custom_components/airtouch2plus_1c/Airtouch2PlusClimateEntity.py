@@ -35,7 +35,7 @@ class Airtouch2PlusClimateEntity(ClimateEntity):
     # ClimateEntity attributes:
     #
     _attr_precision: float = PRECISION_TENTHS
-    _attr_target_temperature_step: float = 0.1
+    _attr_target_temperature_step: float = 1
     _attr_temperature_unit: str = UnitOfTemperature.CELSIUS
 
     def __init__(self, at2plus_aircon: At2PlusAircon) -> None:
