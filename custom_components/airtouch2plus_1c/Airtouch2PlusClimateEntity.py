@@ -126,8 +126,14 @@ class Airtouch2PlusClimateEntity(ClimateEntity):
 
     async def async_set_temperature(self, **kwargs) -> None:
         """Set new target temperature."""
-        temp = float(kwargs.get(ATTR_TEMPERATURE, 0))
-        await self._ac.set_setpoint(temp)
+        temp = (kwargs.get(ATTR_TEMPERATURE, 0))
+        if temp is None:
+            return
+
+        # Force 1°C steps
+        temp_int = int(round(float(temp)))
+
+        await self._ac.set_setpoint(temp_int)
 
     async def async_set_fan_mode(self, fan_mode: str) -> None:
         """Set new target fan mode."""
