@@ -1,5 +1,5 @@
 {
-  "domain": "airtouch2plus",
+  "domain": "airtouch2plus_1c",
   "name": "airtouch2plus",
   "codeowners": ["@nathanvdh"],
   "config_flow": true,
